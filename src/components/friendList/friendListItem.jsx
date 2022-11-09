@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types'
 
+import css from './friendList.module.css'
+
 
 export default function FriendListItem({id, avatar, name, isOnline}){
     return(
-<li class="item"
+<li className={css.item}
 key = {id}>
-  <span class="status">{isOnline ? ("OnLine") : ("OffLine")}</span>
-  <img class="avatar" src={avatar} alt={name} width="48" />
-  <p class="name">{name}</p>
+  <span className={`${css.status} ${css[isOnline]}`}></span>
+  <img className={css.avatar} src={avatar} alt={name} width="48" />
+  <p className={css.name}>{name}</p>
 </li>
     )
 }
